@@ -1,0 +1,156 @@
+/* src/Login.css - Pleasant "Morning Sky" Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap');
+
+/* --- Keyframe Animations --- */
+@keyframes backgroundPan {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* --- Global & Container Styling --- */
+body {
+    margin: 0;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    font-family: 'Montserrat', sans-serif;
+    color: #333; /* Dark text for a light background */
+    
+    /* NEW: Pleasant Animated Gradient */
+    background: linear-gradient(135deg, #a8e0ff, #8ee3f5, #fed6e3);
+    background-size: 400% 400%;
+    animation: backgroundPan 30s ease infinite;
+}
+
+/* --- The Login Box (Clean White Card) --- */
+.login-box {
+    background: #ffffff; /* Solid white card */
+    
+    padding: 50px 60px;
+    border-radius: 25px;
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+    
+    /* Soft, modern shadow */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    
+    animation: fadeInScale 0.8s ease-out forwards;
+    
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.login-box:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Text Styling --- */
+.login-box h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: #2c3e50; /* Dark blue/grey text */
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.login-box p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: #555; /* Medium grey text */
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* --- Button Styling (NEW: Vibrant Teal/Blue) --- */
+.login-button-purple {
+    background: linear-gradient(45deg, #00A9B7, #007BFF); /* Teal to Blue */
+    color: #ffffff;
+    border: none;
+    padding: 16px 35px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3); /* Blue shadow */
+    transition: all 0.3s ease;
+    
+    transform: translateZ(0); 
+}
+
+.login-button-purple:hover {
+    background: linear-gradient(45deg, #00B9C9, #008CFF); /* Lighter on hover */
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 123, 255, 0.5);
+}
+
+.login-button-purple:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* --- Role Selection Buttons (NEW: Light Theme) --- */
+.role-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.role-button {
+    background-color: #f8f9fa; /* Light grey background */
+    border: 1px solid #dee2e6; /* Light grey border */
+    padding: 18px 15px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #495057; /* Dark grey text */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-basis: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.role-button:hover {
+    border-color: #007BFF; /* Blue accent on hover */
+    color: #007BFF;
+    background-color: #ffffff;
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.role-button.selected {
+    background: linear-gradient(45deg, #00A9B7, #007BFF); /* Solid blue/teal for selected */
+    border-color: #007BFF;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+    transform: translateY(-1px);
+}
+.role-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 35px; /* 👈 MODIFIED (e.g., from 25px to 35px) */
+}

@@ -1,0 +1,701 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+/* Home.css - DRAMATICALLY INCREASED STYLING */
+
+/* --- 1. Global Setup & Colors --- */
+:root {
+  --primary-color: #4CAF50; /* A fresh, reliable green */
+  --primary-dark: #388E3C;
+  --text-dark: #212121;
+  --text-light: #f4f4f4;
+  --bg-color: #fdfdfd;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --card-radius: 16px;
+}
+
+/* --- 2. Main Container & Layout --- */
+.home-container {
+  /* Using a modern, clean font stack */
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.home-content {
+  display: flex;
+  flex: 1; /* Makes it take up the remaining space */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px 48px; /* Add padding */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- 3. Header & Navigation Buttons --- */
+.home-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 24px 48px;
+  width: 100%;
+  box-sizing: border-box;
+  animation: slideInFromTop 0.7s ease-out forwards;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+/* This is the new, modern button style */
+.login-button {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px; /* Pill-shaped */
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+  font-size: 16px;
+}
+
+.login-button:hover {
+  background-color: var(--primary-dark);
+  box-shadow: 0 6px 20px rgba(56, 142, 60, 0.5);
+  transform: translateY(-2px);
+}
+
+.login-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+}
+
+/* Make the Log Out button red for danger */
+.home-header .user-info button.login-button {
+  background-color: #f44336; /* Red */
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.4);
+}
+
+.home-header .user-info button.login-button:hover {
+  background-color: #d32f2f;
+  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5);
+}
+
+.home-header .user-info span {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #333;
+}
+
+/* --- 4. Dramatic Title Styling --- */
+.platform-title {
+  font-size: 6.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -2.5px;
+
+  /* --- NEW Animated Gradient --- */
+  background: linear-gradient(120deg, #A5D6A7, #ffffff, #dbefdc, #A5D6A7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Make the background larger than the text */
+  background-size: 300% 300%; 
+
+  /* Link to the animation */
+  animation: animatedGradient 10s ease infinite;
+  /* --- END of new styles --- */
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* --- 5. "Food for Thought" Card Styling --- */
+.food-fact-container {
+  width: 380px;
+  flex-shrink: 0; /* Prevents card from shrinking */
+  background: #ffffff;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 24px;
+  box-sizing: border-box;
+  margin-left: 40px; /* Space from the title */
+  
+  /* Animation */
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
+.food-fact-container h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--primary-dark);
+}
+
+.meal-item img {
+  width: 100%;
+  border-radius: calc(var(--card-radius) - 8px); /* Slightly smaller radius */
+  object-fit: cover;
+  height: 200px;
+  margin-bottom: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.meal-item h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: var(--text-dark);
+}
+
+.meal-item p {
+  font-size: 1rem;
+  margin: 0;
+  color: #666;
+}
+
+.meal-item p span {
+  font-weight: 500;
+  color: var(--text-dark);
+  background-color: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Loading/Error State */
+.food-fact-container p {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #777;
+}
+
+/* --- 6. Keyframe Animations --- */
+@keyframes slideInFromLeft {
+  0% { opacity: 0; transform: translateX(-100px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+  0% { opacity: 0; transform: translateX(100px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromTop {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 7. Responsive Design for Mobile --- */
+@media (max-width: 900px) {
+  .home-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .platform-title {
+    font-size: 4rem;
+    margin-bottom: 40px;
+  }
+
+  .food-fact-container {
+    margin-left: 0;
+    width: 100%;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-header {
+    padding: 16px;
+    flex-direction: column;
+  }
+  
+  .user-info {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  
+  .user-info span {
+    text-align: center;
+    margin: 0 0 10px 0;
+  }
+  
+  .login-button {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .user-info .login-button {
+    margin: 5px 0 !important;
+  }
+
+  .home-content {
+    padding: 24px;
+  }
+
+  .platform-title {
+    font-size: 3rem;
+    letter-spacing: -1px;
+  }
+}
+
+.menu-toggle {
+  position: absolute;
+  top: 24px;
+  left: 48px;
+  z-index: 1001; /* Above content, below open menu */
+  
+  /* Pill Button Style */
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff; /* Clean white */
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+.menu-toggle:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* --- The Glossy Menu Container --- */
+.glossy-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px; /* Width of the menu */
+  height: 100vh;
+  
+  /* The "Glossy" Effect */
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent */
+  backdrop-filter: blur(20px); /* The blur */
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2);
+  
+  z-index: 1002; /* Above everything */
+  
+  /* Animation */
+  transform: translateX(-100%); /* Start off-screen */
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  
+  /* Flex setup for content */
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+/* The "Open" state for the menu */
+.glossy-menu.open {
+  transform: translateX(0); /* Slide in */
+}
+
+/* --- Close Button (Top Right "X") --- */
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  text-align: right;
+  margin: -10px 0 30px 0;
+  align-self: flex-end;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: var(--primary-color);
+}
+
+/* --- Links inside the menu --- */
+.glossy-menu-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.glossy-menu-links a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 16px 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.glossy-menu-links a:hover {
+  color: var(--primary-color);
+  transform: translateX(10px); /* Nice hover effect */
+}
+
+/* --- Mobile adjustments for new menu --- */
+@media (max-width: 600px) {
+  .menu-toggle {
+    top: 16px;
+    left: 16px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  
+  .glossy-menu {
+    width: 280px; /* Slightly smaller on mobile */
+  }
+}
+/* --- 2. Main Container & Layout --- */
+.home-container {
+  /* ... (your existing font, background, color styles) ... */
+
+  /* --- ADD THESE 5 LINES FOR THE BACKGROUND --- */
+  background-image: url('/test1.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Makes the image stay in place on scroll */
+
+  /* ... (the rest of your existing .home-container styles) ... */
+}
+.food-fact-container {
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent */
+  backdrop-filter: blur(15px); /* The blur */
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Softer shadow */
+}
+
+/* Make the text readable (white) */
+.food-fact-container h3 {
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.meal-item h4 {
+  color: #ffffff;
+}
+
+.meal-item p {
+  color: #f4f4f4;
+}
+
+.meal-item p span {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Loading/Error text */
+.food-fact-container p {
+  color: #f4f4f4;
+}
+/* --- 10. (FIXED) "LIQUID GLASS" MENU BUTTON --- */
+
+.menu-toggle {
+  /* --- FORCING THE PILL SHAPE --- */
+  width: fit-content; /* This is the key: only be as wide as its content */
+  box-sizing: border-box; /* Ensures padding is included correctly */
+  
+  /* Glass Effect */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Text Styling */
+  color: #ffffff;
+  font-weight: 600;
+  
+  /* --- TUNE THE SIZE HERE --- */
+  padding: 12px 18px;  /* Controls the size (top/bottom and left/right) */
+  font-size: 14px;      /* Controls text size */
+  /* --- END OF TUNING --- */
+  
+  border-radius: 50px; /* Makes it a pill */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  /* Animation setup */
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Hover Animation & Color Change */
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+/* Liquid shine animation */
+.menu-toggle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.7s ease;
+}
+
+.menu-toggle:hover::before {
+  left: 100%;
+}
+/* --- 11. NEW GRADIENT ANIMATION --- */
+@keyframes animatedGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* src/Home.css */
+
+/* ... (your existing .home-container, .home-header, etc. styles) ... */
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+/* 👇 NEW RULE: Styles the "Welcome, AVINASH!" text */
+.welcome-message {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    
+    /* Glassmorphism background */
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    padding: 10px 16px;
+    border-radius: 50px; /* Pill shape */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.welcome-message {
+    font-size: 1rem;
+    font-weight: 700;
+    
+    /* 👇 FORCING the text to be white */
+    color: #ffffff !important; 
+    
+    /* Lighter glassmorphism background */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    padding: 10px 18px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+/* --- Button Styling --- */
+
+.login-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* NEW: Specific style for the Log Out button */
+.logout-btn {
+    background-color: #E53935; /* Red */
+}
+
+.logout-btn:hover {
+    background-color: #C62828; /* Darker Red */
+}
+/* src/Home.css */
+
+/* --- ADD/UPDATE THIS BLOCK AT THE BOTTOM --- */
+
+/* Center content for simple pages */
+.about-content,
+.contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it covers the whole screen height */
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.content-box { /* The container for text on About Us/Contact Us */
+    /* Glassmorphism Effect */
+    background: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    color: white; /* Ensure ALL text is white */
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 650px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.content-box h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.content-box p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f0f0f0; /* Lighter body text */
+}
+
+.contact-details {
+    margin-top: 20px;
+    text-align: left;
+    display: inline-block;
+}
+
+/* Style for the back button on the new pages */
+.static-header {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 50;
+}
+/* src/Home.css */
+
+/* --- ADD THIS CODE TO THE BOTTOM OF YOUR FILE --- */
+
+/* This styles the main "liquid glass" box
+  (In case you missed it from the previous step) 
+*/
+.content-box {
+    background: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 900px; /* Wider to fit 3 columns */
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-out; /* Add a fade-in */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content-box h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.content-box p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+/* --- NEW: Team Section Styles --- */
+.team-container {
+    display: grid;
+    /* Creates 3 responsive columns */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px; /* Space between team members */
+    width: 100%;
+    margin-top: 2.5rem;
+}
+
+.team-member {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member img {
+    width: 130px;  /* Size of the circle */
+    height: 130px; /* Size of the circle */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures image fills the circle */
+    border: 3px solid rgba(255, 255, 255, 0.5); /* Glassy border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+}
+
+.team-member h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.team-member p {
+    font-size: 0.95rem;
+    color: #d0d0d0;
+    line-height: 1.5;
+}
+
+/* --- Responsive: Stack on small screens --- */
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    
+    .content-box {
+        padding: 30px 20px;
+    }
+}
