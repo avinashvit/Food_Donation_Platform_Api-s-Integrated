@@ -1,0 +1,142 @@
+{
+  "users": {
+    "google-oauth2|108072248832480694147": {
+      "role": "recipient"
+    },
+    "google-oauth2|107009713799033671495": {
+      "role": "donor"
+    },
+    "google-oauth2|111188960070513019507": {
+      "role": "recipient"
+    },
+    "google-oauth2|109878834595461508123": {
+      "role": "donor"
+    }
+  },
+  "donations": [
+    {
+      "id": 1,
+      "donorId": "google-oauth2|107009713799033671495",
+      "foodName": "Dosa",
+      "category": "Main Course",
+      "quantity": "100",
+      "status": "claimed"
+    },
+    {
+      "id": 2,
+      "donorId": "google-oauth2|107009713799033671495",
+      "foodName": "Dosa",
+      "category": "Main Course",
+      "quantity": "100",
+      "status": "claimed"
+    },
+    {
+      "id": 3,
+      "donorId": "google-oauth2|111188960070513019507",
+      "foodName": "Dosa",
+      "category": "Main Course",
+      "quantity": "100",
+      "location": "Kumbakonam - Karaikal Road, Ennakkudi, Srikandapuram, Kumbakonam, Thanjavur, Tamil Nadu, 609805, India",
+      "latitude": 10.955259723897,
+      "longitude": 79.40140074799811,
+      "donorPhoneNumber": "7305940480",
+      "status": "claimed"
+    },
+    {
+      "id": 4,
+      "donorId": "google-oauth2|109878834595461508123",
+      "foodName": "Idli",
+      "category": "Dinner",
+      "quantity": "50",
+      "location": "CMWSSB Division 183, Ward 183, பெருங்குடி, Chennai, Sholinganallur, சென்னை மாவட்டம், Tamil Nadu, 600041, India",
+      "latitude": 12.970310634072916,
+      "longitude": 80.25560391292227,
+      "donorPhoneNumber": "7305499055",
+      "status": "completed"
+    },
+    {
+      "id": 5,
+      "donorId": "google-oauth2|109878834595461508123",
+      "foodName": "samosa",
+      "category": "snacks",
+      "quantity": "10",
+      "location": "Anderson Street, CMWSSB Division 57, Ward 57, ராயபுரம், Chennai, சென்னை மாவட்டம், Tamil Nadu, 600079, India",
+      "latitude": 13.091475157922014,
+      "longitude": 80.28441238508094,
+      "donorPhoneNumber": "8610071643",
+      "status": "available"
+    },
+    {
+      "id": 6,
+      "donorId": "google-oauth2|109878834595461508123",
+      "foodName": "Parotta",
+      "category": "10",
+      "quantity": "dinner",
+      "location": "Sindhi Model Senior Secondary School, 1, Damodaran Street, CMWSSB Division 103, Ward 103, அண்ணா நகர், Chennai, சென்னை மாவட்டம், Tamil Nadu, 600010, India",
+      "latitude": 13.084519545281694,
+      "longitude": 80.2435569773661,
+      "donorPhoneNumber": "9840817339",
+      "status": "available"
+    },
+    {
+      "id": 7,
+      "donorId": "google-oauth2|109878834595461508123",
+      "foodName": "cake",
+      "category": "snack",
+      "quantity": "5",
+      "location": "Wesley Higher Secondary School, வெஸ்ட்காட் சாலை, CMWSSB Division 115, Ward 115, தேனாம்பேட்டை, Chennai, சென்னை மாவட்டம், Tamil Nadu, 600014, India",
+      "latitude": 13.05508978714769,
+      "longitude": 80.26278305158485,
+      "donorPhoneNumber": "7309588023",
+      "status": "available"
+    },
+    {
+      "id": 8,
+      "donorId": "google-oauth2|109878834595461508123",
+      "foodName": "pizza",
+      "category": "dinner",
+      "quantity": "4",
+      "location": "CMWSSB Division 101, Ward 101, அண்ணா நகர், Chennai, சென்னை மாவட்டம், Tamil Nadu, 600102, India",
+      "latitude": 13.087328568974637,
+      "longitude": 80.21736145019533,
+      "donorPhoneNumber": "6381007824",
+      "status": "available"
+    },
+    {
+      "id": 9,
+      "donorId": "google-oauth2|107009713799033671495",
+      "foodName": "aviansh",
+      "category": "Main Course",
+      "quantity": "324",
+      "location": "Vellore Institute of Technology, Tiruvalam - Katpadi - Venkatagirikottah Road, Katpadi, Vellore, Tamil Nadu, 632014, India",
+      "latitude": 12.968958379345262,
+      "longitude": 79.17126845594788,
+      "donorPhoneNumber": "7305940480",
+      "donorEmail": "aavi66328@gmail.com",
+      "status": "available"
+    }
+  ],
+  "orders": [
+    {
+      "recipientId": "google-oauth2|108072248832480694147",
+      "donationId": 1,
+      "timestamp": "2025-09-16T17:21:55.695Z"
+    },
+    {
+      "recipientId": "google-oauth2|111188960070513019507",
+      "donationId": 2,
+      "timestamp": "2025-10-24T10:04:20.543Z"
+    },
+    {
+      "recipientId": "google-oauth2|111188960070513019507",
+      "donationId": 3,
+      "timestamp": "2025-10-24T10:25:20.337Z"
+    },
+    {
+      "recipientId": "google-oauth2|107009713799033671495",
+      "donationId": 4,
+      "recipientEmail": "aavi66328@gmail.com",
+      "timestamp": "2025-11-04T09:49:29.282Z"
+    }
+  ]
+}
